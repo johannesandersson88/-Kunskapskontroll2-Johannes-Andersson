@@ -7,42 +7,45 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e92ebd5839.js" crossorigin="anonymous "></script>
     <title>Digital WeatherStation</title>
 </head>
 
 <body>
     <container class="container">
-        <div class="ikon-hold">
-            <div class="ikon">
-                <i>P</i>
-            </div>
-        </div>
         <header class="header">
             <div class="content">
                 <div class="city-information">
-                    <div class="status">Skriv in en stad</div>
-                    <div class="location">Dagens Väder</div>
+                    <div class="location">Skriv in en stad</div>
+                    <div class="status">Dagens Väder</div>
                 </div>
             </div>
         </header>
-        <div class="city">
-            <input type="text" id="city-search" placeholder="Välj en stad">
-            <input type="submit" id="city-submit" value="Enter">
+        <div class="ikon-hold">
+            <div class="ikon">
+                <img src="https://openweathermap.org/img/wn/04d.png" alt="" class="img">
+            </div>
         </div>
+
         <section class="general-info">
             <div class="info">
                 <div class="title">Temperatur</div>
-                <div class="value">0.00</div>
+                <div class="value temp">0.00</div>
             </div>
             <div class="info">
                 <div class="title">Vindhastighet</div>
-                <div class="value">0.00</div>
+                <div class="value wind">0.00</div>
             </div>
             <div class="info">
-                <div class="title">Luftfuktighet</div>
-                <div class="value">0.00</div>
+                <div class="title Luftfuktighet">Luftfuktighet</div>
+                <div class="value moist">0.00</div>
             </div>
         </section>
+
+        <form class="city">
+            <input type="text" id="city-search" placeholder="Välj en stad">
+            <input type="submit" id="city-submit" value="Enter">
+        </form>
 
 
 
