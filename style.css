@@ -5,7 +5,7 @@
 
 
 body {
-    background: linear-gradient(to right, rgba(103, 104, 101, 0.603), rgb(231, 232, 235));
+    background: linear-gradient(to left, rgba(39, 36, 36, 0.603), rgb(82, 78, 78));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,7 @@ body {
     max-width: 90%;
     width: 1200px;
     background: rgba(97, 96, 96, 0.096);
-    box-shadow: 0 10px 10px white;
+    box-shadow: 0 10px 40px white;
     border-radius: 5px;
 }
 
@@ -88,8 +88,9 @@ body {
     padding: 1rem;
     font-size: 2rem;
     text-transform: uppercase;
-    background: #789;
-    color: white;
+    background: rgb(197, 203, 209);
+    color: rgba(97, 96, 96);
+    border-radius: 20px;
 }
 
 .header {
@@ -116,6 +117,23 @@ body {
     color: #fff;
 }
 
+.city-comparison {
+    display: flex;
+    text-align: center;
+}
 
+.city-list {
+    list-style: none;
+}
+
+.list-head {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.list-item {
+    font-size: 1.5rem;
+    color: #fff;
+}
 
 

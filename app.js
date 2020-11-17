@@ -38,7 +38,10 @@ getCity.addEventListener('submit', function (event) {
             const moist = data.main.humidity;
             const icon = data.weather[0].icon;
 
-            changeCityHead(city, status, temp, windSpeed, moist, icon)
+            changeCityHead(city, status, temp, windSpeed, moist, icon);
+            makeCityList(city, temp, windSpeed, moist);
+            //Funktion för att skapa en knapp för jämförelse. 
+
         }
     ).catch(
         function (error) {
@@ -66,6 +69,47 @@ function changeCityHead(ci, st, te, ws, mst, i) {
 
     changeIcon = document.querySelector('.img');
     const iconID = i;
-    changeIcon.src = `https://openweathermap.org/img/wn/${iconID}.png`
+    changeIcon.src = `https://openweathermap.org/img/wn/${iconID}@2x.png`
 
+};
+
+function makeCityList(ci, te, ws, mst) {
+    let newList = document.querySelector('.city-comparison');
+
+    let ul = document.createElement('ul');
+
+    let h3 = document.createElement('h3');
+    ul.appendChild(h3);
+    h3.innerHTML = ci;
+
+    let liTemp = document.createElement('li');
+    ul.appendChild(liTemp);
+    liTemp.innerHTML = te + '°';
+
+    let liWind = document.createElement('li');
+    ul.appendChild(liWind);
+    liWind.innerHTML = ws + ' m/s';
+
+    let liMoist = document.createElement('li');
+    ul.appendChild(liMoist);
+    liMoist.innerHTML = mst + ' %';
+
+    newList.append(ul);
+
+
+    ul.style.listStyle = 'none';
+    ul.style.textAlign = 'center';
+    ul.style.color = '#fff';
+    h3.style.borderBottom = '1px solid #fff';
+    h3.style.fontSize = '25px';
+    h3.style.marginBottom = '10px';
+
+    liTemp.style.fontSize = '20px';
+    liTemp.style.padding = '5px';
+    liWind.style.fontSize = '20px';
+    liWind.style.padding = '5px';
+    liMoist.style.fontSize = '20px';
+    liMoist.style.padding = '5px';
 }
+
+
