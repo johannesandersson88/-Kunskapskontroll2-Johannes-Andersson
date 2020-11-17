@@ -19,7 +19,12 @@ getCity.addEventListener('submit', function (event) {
     cityInput.value = '';
     fetch(cityURL).then(
         function (response) {
-            return response.json();
+
+            if (response.status >= 200 && response.status < 300) {
+                return response.json();
+            } else {
+                throw 'Staden kunde inte hittas, prova en annan'
+            }
         }
     ).then(
         function (data) {
@@ -35,6 +40,10 @@ getCity.addEventListener('submit', function (event) {
 
             changeCityHead(city, status, temp, windSpeed, moist, icon)
         }
+    ).catch(
+        function (error) {
+            alert(error);
+        }
     )
 });
 
@@ -47,7 +56,7 @@ function changeCityHead(ci, st, te, ws, mst, i) {
     changeStatus.style.textTransform = 'capitalize';
 
     let changeTemperatur = document.querySelector('.temp');
-    changeTemperatur.innerHTML = te + ' °';
+    changeTemperatur.innerHTML = te + '°';
 
     let changeWindSpeed = document.querySelector('.wind');
     changeWindSpeed.innerHTML = ws + ' m/s';

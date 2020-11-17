@@ -5,7 +5,7 @@
 
 
 body {
-    background: linear-gradient(to right, rgba(221, 241, 36, 0.596), rgb(128, 157, 219));
+    background: linear-gradient(to right, rgba(103, 104, 101, 0.603), rgb(231, 232, 235));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,8 +17,8 @@ body {
 .container {
     max-width: 90%;
     width: 1200px;
-    background: white;
-    box-shadow: 0 5px 10px black;
+    background: rgba(97, 96, 96, 0.096);
+    box-shadow: 0 10px 10px white;
     border-radius: 5px;
 }
 
@@ -43,12 +43,13 @@ body {
     font-size: 2rem;
     flex-grow: 1;
     font-weight: bold;
-    color: #789;
+    color: #fff;
 }
 
 .info .value {
     font-size: 2rem;
     margin-top: 10px;
+    color: #fff;
 }
 
 .ikon-hold {
@@ -76,7 +77,7 @@ body {
 #city-search {
     font-size: 2rem;
     outline: none;
-    border: 1px solid #789;
+    border: 1px solid #fff;
     border-radius: 10px;
     padding: 10px 15px;
     width: 50%;
@@ -105,12 +106,14 @@ body {
 .location {
     font-size: 3rem;
     font-weight: bold;
+    color: #fff;
 }
 
 .status {
     font-size: 2rem;
     font-weight: normal;
     margin-top: 10px;
+    color: #fff;
 }
 
 
