@@ -136,4 +136,14 @@ body {
     color: #fff;
 }
 
+.tempCheck {
+    font-size: 2.5rem;
+    color: #fff;
+    display: flex;
+    margin-left: 40px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
 

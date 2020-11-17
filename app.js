@@ -32,14 +32,16 @@ getCity.addEventListener('submit', function (event) {
 
             // Hämtar informationen från API beroende på stad.
             const city = data.name;
+            const country = data.sys.country;
             const status = data.weather[0].description;
             const temp = data.main.temp;
             const windSpeed = data.wind.speed;
             const moist = data.main.humidity;
             const icon = data.weather[0].icon;
 
-            changeCityHead(city, status, temp, windSpeed, moist, icon);
+            changeCityHead(city, country, status, temp, windSpeed, moist, icon);
             makeCityList(city, temp, windSpeed, moist);
+            hotOrNot(temp);
             //Funktion för att skapa en knapp för jämförelse. 
 
         }
@@ -50,9 +52,9 @@ getCity.addEventListener('submit', function (event) {
     )
 });
 
-function changeCityHead(ci, st, te, ws, mst, i) {
+function changeCityHead(ci, cty, st, te, ws, mst, i) {
     let changeLocation = document.querySelector('.location');
-    changeLocation.innerHTML = ci;
+    changeLocation.innerHTML = ci + ', ' + cty;
 
     let changeStatus = document.querySelector('.status');
     changeStatus.innerHTML = st;
@@ -110,6 +112,21 @@ function makeCityList(ci, te, ws, mst) {
     liWind.style.padding = '5px';
     liMoist.style.fontSize = '20px';
     liMoist.style.padding = '5px';
+};
+
+
+function hotOrNot(te) {
+    let changeTemp = document.querySelector('.tempCheck');
+
+    if (te >= 20) {
+        changeTemp.style.color = 'yellow';
+        changeTemp.innerHTML = `<i class="fas fa-cocktail"></i>`;
+    } else if (te > 10) {
+        changeTemp.style.color = 'green';
+        changeTemp.innerHTML = `<i class="fas fa-futbol"></i>`;
+    } else {
+        changeTemp.style.color = 'blue';
+        changeTemp.innerHTML = `<i class="fas fa-snowman"></i>`;
+    }
+
 }
-
-
