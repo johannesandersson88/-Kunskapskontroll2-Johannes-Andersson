@@ -4,7 +4,7 @@ const apiKey = '8080185354e3479dfc40e61fc766810c';
 
 // Väljer input och submitknappen för att kunna använda dom.
 let getCity = document.querySelector('.city');
-console.log(getCity)
+
 
 // Vad som händer när du antingen trycker enter elle submit. 
 getCity.addEventListener('submit', function (event) {
@@ -146,6 +146,8 @@ function makeCityList(ci, te, ws, mst) {
     liWind.style.padding = '5px';
     liMoist.style.fontSize = '20px';
     liMoist.style.padding = '5px';
+
+    XMLHttpRequest = 10;
 };
 
 // Funktion för att ändra ikon och färg på ikon utifrån datan från API. 
